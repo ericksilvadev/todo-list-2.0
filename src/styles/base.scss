@@ -5,15 +5,17 @@ body {
   --box: #fff;
   --gradient-pink: #d745ff98;
   --gradient-blue: #809cffc4;
+  --border: #e6e5ea;
 }
 
 body[theme='dark'] {
   --background: #181824;
-  --text: #9ea0b9;
+  --text: #c8cae3;
   --title: #fffcff;
   --box: #25273c;
   --gradient-pink: #d220ffa6;
   --gradient-blue: #426afcc0;
+  --border: #37394e;
   transition: 0.2s;
 }
 
@@ -23,6 +25,7 @@ $title: var(--title);
 $box: var(--box);
 $gradient-pink: var(--gradient-pink);
 $gradient-blue: var(--gradient-blue);
+$border: var(--border);
 
 * {
   margin: 0;
@@ -37,4 +40,6 @@ body {
   color: $text;
   font-family: Poppins, sans-serif;
   font-size: 16px;
+  width: 100vw;
+  overflow-x: hidden;
 }

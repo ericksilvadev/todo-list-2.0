@@ -1,12 +1,15 @@
-import { Header, TaskList } from './components';
+import { Header, NewTask, TaskList } from './components';
 import './styles/main.scss';
 
 function App() {
   return (
-    <div className="root">
+    <>
       <Header />
-      <TaskList />
-    </div>
+      <div className="tasks-container">
+        <NewTask />
+        <TaskList />
+      </div>
+    </>
   );
 }
 

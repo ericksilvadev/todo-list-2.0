@@ -5,8 +5,9 @@ interface ITasksProvider {
 }
 
 interface ITask {
-  taskId: string;
+  taskId: number;
   task: string;
+  completed: boolean;
 }
 
 interface ITasksContext {
