@@ -1,0 +1,13 @@
+header {
+  height: 40vh;
+  background: url(../images/mountain-day.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 0.2s;
+
+  &.dark {
+    background: url(../images/mountain-night.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}

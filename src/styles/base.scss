@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  --background: #fafafa;
+  --text: #4c4b59;
+  --title: #fefcfc;
+  --box: #fff;
+  --gradient-pink: #d745ff98;
+  --gradient-blue: #809cffc4;
+  transition: 0.2s;
+}
+
+body[theme='dark'] {
+  --background: #181824;
+  --text: #9ea0b9;
+  --title: #fffcff;
+  --box: #25273c;
+  --gradient-pink: #d220ffa6;
+  --gradient-blue: #426afcc0;
+}
+
+$background: var(--primary);
+$text: var(--text);
+$title: var(--title);
+$box: var(--box);
+$gradient-pink: var(--gradient-pink);
+$gradient-blue: var(--gradient-blue);
+
+body {
+  background: $background;
+  color: $text;
+}
