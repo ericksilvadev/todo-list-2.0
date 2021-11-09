@@ -93,7 +93,7 @@ const TaskList = () => {
           </ul>
         )}
       </Droppable>
-      <p className="drag-info">Drag and drop to reorder list.</p>
+      <p className="drag-info">Drag and drop to reorder list</p>
     </DragDropContext>
   );
 };
