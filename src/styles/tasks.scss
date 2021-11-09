@@ -4,6 +4,50 @@
   position: relative;
   z-index: 2;
 
+  .filter-tasks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5rem;
+    padding: 0 1.5rem;
+
+    background: $box;
+    margin-top: 1.5rem;
+    border-radius: 4px 4px 0 0;
+
+    .tasks-left {
+      color: $text-lighter;
+      font-size: 0.9rem;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: $text-lighter;
+      transition: 0.2s;
+      font-size: 0.9rem;
+      cursor: pointer;
+
+      &:hover {
+        color: $text;
+      }
+
+      &.selected {
+        color: #4071ce;
+        font-weight: 600;
+      }
+    }
+    .filter-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        margin: 0 1rem;
+      }
+    }
+  }
+
   .new-task {
     width: 100%;
     height: 3.5rem;
@@ -21,26 +65,19 @@
 
   .task-list {
     width: 100%;
-    margin-top: 1.5rem;
 
     li {
       background: $box;
       height: 3.5rem;
-      border-bottom: 1px solid $border;
+      border-top: 1px solid $border;
       padding: 0 1.3rem;
-      // transition: border background-color 0.2s ease;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      &:first-child {
-        border-radius: 4px 4px 0 0;
-      }
-
       &:last-child {
         border-radius: 0 0 4px 4px;
-        // border: none;
       }
 
       &.dragging {
@@ -50,17 +87,35 @@
       div {
         display: flex;
         align-items: center;
+        transition: 0.2s;
+
+        &.completed {
+          text-decoration: line-through;
+          color: $text-lighter;
+        }
       }
 
       .complete-switch {
-        height: 1.3rem;
-        width: 1.3rem;
+        height: 1.5rem;
+        width: 1.5rem;
         border: 1px solid $border;
         border-radius: 50%;
         background-color: $box;
         margin-right: 1.3rem;
         cursor: pointer;
-        // transition: 0.2s ease;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 60%;
+          transform: translate(0.05rem, 0.05rem);
+        }
+
+        &.completed {
+          background: linear-gradient(135deg, $gradient-blue, $gradient-pink);
+        }
       }
 
       .delete-task {

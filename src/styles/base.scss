@@ -6,6 +6,7 @@ body {
   --gradient-pink: #d745ff98;
   --gradient-blue: #809cffc4;
   --border: #e6e5ea;
+  --text-lighter: #4c4b5959;
 }
 
 body[theme='dark'] {
@@ -16,6 +17,7 @@ body[theme='dark'] {
   --gradient-pink: #d220ffa6;
   --gradient-blue: #426afcc0;
   --border: #37394e;
+  --text-lighter: #c8cae35e;
   transition: 0.2s;
 }
 
@@ -26,6 +28,7 @@ $box: var(--box);
 $gradient-pink: var(--gradient-pink);
 $gradient-blue: var(--gradient-blue);
 $border: var(--border);
+$text-lighter: var(--text-lighter);
 
 * {
   margin: 0;
