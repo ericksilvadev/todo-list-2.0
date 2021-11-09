@@ -18,7 +18,7 @@ const NewTask = () => {
   const handleSubmit = (values: IForm) => {
     const newTaskObj = {
       task: values.newTask,
-      taskId: tasks.length + 1,
+      taskId: values.newTask + (tasks.length + 1),
       completed: false,
     };
     const updateTasks = [...tasks, newTaskObj];
