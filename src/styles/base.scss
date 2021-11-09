@@ -6,7 +6,7 @@ body {
   --gradient-pink: #d745ff98;
   --gradient-blue: #809cffc4;
   --border: #e6e5ea;
-  --text-lighter: #4c4b5959;
+  --text-lighter: #4c4b598e;
 }
 
 body[theme='dark'] {
@@ -29,6 +29,8 @@ $gradient-pink: var(--gradient-pink);
 $gradient-blue: var(--gradient-blue);
 $border: var(--border);
 $text-lighter: var(--text-lighter);
+$error: rgb(255, 75, 75);
+$primary-blue: #4071ce;
 
 * {
   margin: 0;

@@ -3,26 +3,21 @@ import { TasksContext } from '../context/tasks';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import Task from './Task';
 
-interface ITask {
-  taskId: string;
-  task: string;
-  completed: boolean;
-}
-
 const TaskList = () => {
-  const { tasks, setTasks } = useContext(TasksContext);
   const [filter, setFilter] = useState('all');
-  const [filteredTasks, setFilteredTasks] = useState([...tasks]);
+  const [showWarning, setShowWarning] = useState(false);
 
-  useEffect(() => {
-    if (filter === 'all') setFilteredTasks([...tasks]);
+  const { tasks, setTasks } = useContext(TasksContext);
+
+  const filterTasks = () => {
     if (filter === 'active') {
-      setFilteredTasks(tasks.filter((task) => !task.completed));
+      return tasks.filter((task) => !task.completed);
     }
     if (filter === 'completed') {
-      setFilteredTasks(tasks.filter((task) => task.completed));
+      return tasks.filter((task) => task.completed);
     }
-  }, [filter, tasks]);
+    return tasks;
+  };
 
   const handleClearCompleted = () => {
     const clearTasks = tasks.filter((task) => !task.completed);
@@ -32,6 +27,13 @@ const TaskList = () => {
   const onDragEnd = (result: any) => {
     const { destination, source, draggableId } = result;
 
+    if (filter !== 'all') {
+      if (!showWarning) {
+        setShowWarning(true);
+        setTimeout(() => setShowWarning(false), 3000);
+      }
+      return;
+    }
     if (!destination) return;
     if (!destination.droppableId === source.droppableId && destination.index === source.index) {
       return;
@@ -49,6 +51,7 @@ const TaskList = () => {
 
   return (
     <DragDropContext onDragEnd={(result) => onDragEnd(result)}>
+      {showWarning && <span className="drag-warning">You cannot drag a task while using a filter.</span>}
       <div className="filter-tasks">
         <p className="tasks-left">{tasks.filter((task) => !task.completed).length} items left</p>
         <div className="filter-buttons">
@@ -81,7 +84,7 @@ const TaskList = () => {
       <Droppable droppableId="task-list-droppable">
         {(provided) => (
           <ul {...provided.droppableProps} ref={provided.innerRef} className="task-list">
-            {filteredTasks.map(({ task, taskId, completed }, index) => (
+            {filterTasks().map(({ task, taskId, completed }, index) => (
               <Task task={task} taskId={taskId} completed={completed} index={index} />
             ))}
             {provided.placeholder}
