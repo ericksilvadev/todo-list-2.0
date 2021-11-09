@@ -1,6 +1,6 @@
 # TO DO LIST
 
-In this project, I created a dynamic to-do list witch items can be added, deleted, moved. The tasks are saved in the localStorage and can be seen in the same way in a new visit to the page.
+In this project, I created a dynamic to-do list witch items can be added, deleted and moved. The tasks are saved in the localStorage and can be seen in the same way in a new visit to the page.
 
 _This project was developed based on [Frontend Mentor's challenge](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)_
 
