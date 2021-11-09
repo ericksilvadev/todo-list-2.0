@@ -15,7 +15,7 @@ const NewTask = () => {
     newTask: yup.string().required(),
   });
 
-  const handleSubmit = (values: IForm) => {
+  const handleSubmit = (values: IForm, resetForm: () => void) => {
     const newTaskObj = {
       task: values.newTask,
       taskId: values.newTask + (tasks.length + 1),
@@ -23,12 +23,13 @@ const NewTask = () => {
     };
     const updateTasks = [...tasks, newTaskObj];
     setTasks(updateTasks);
+    resetForm();
   };
 
   return (
     <Formik
       initialValues={{ newTask: '' }}
-      onSubmit={(values) => handleSubmit(values)}
+      onSubmit={(values, { resetForm }) => handleSubmit(values, resetForm)}
       validationSchema={newTaskSchema}
     >
       {({ errors, touched }) => (
