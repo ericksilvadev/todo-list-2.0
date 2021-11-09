@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -10,10 +10,13 @@
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To do List</title>
+    <title>To Do List</title>
   </head>
-  <body id="body">
+  <body id="body" class="preload">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+  <script>
+    window.onLoad(() => document.body.classList.remove('preload'));
+  </script>
 </html>
