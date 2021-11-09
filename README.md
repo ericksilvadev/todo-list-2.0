@@ -9,6 +9,7 @@ _This project was developed based on [Frontend Mentor's challenge](https://www.f
 ## Main technologies that I used
 
 - [ReactJS](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Sass](https://sass-lang.com/)
 - [Formik](https://formik.org/docs/overview)
 - [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)
