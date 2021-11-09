@@ -28,5 +28,9 @@ export const TasksProvider: React.FC<ITasksProvider> = ({ children }) => {
     }
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
   return <TasksContext.Provider value={{ tasks, setTasks }}>{children}</TasksContext.Provider>;
 };
