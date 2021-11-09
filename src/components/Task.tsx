@@ -31,6 +31,12 @@ const Task: React.FC<ITask> = ({ task, taskId, completed, index }) => {
     setTasks(updatedTasks);
   };
 
+  const handleDeleteTask = () => {
+    const updatedTasks = tasks.filter((task) => task.taskId !== taskId);
+
+    setTasks(updatedTasks);
+  };
+
   return (
     <Draggable draggableId={taskId} index={index} key={taskId}>
       {(provided, { isDragging }) => (
@@ -46,11 +52,13 @@ const Task: React.FC<ITask> = ({ task, taskId, completed, index }) => {
               className={completed ? 'complete-switch completed' : 'complete-switch'}
               onClick={handleComplete}
             >
-              {completed && <img src={checkIcon} alt="Check" />}
+              <div className={completed ? 'completed' : ''}>
+                {completed && <img src={checkIcon} alt="Check" />}
+              </div>
             </button>
             {task}
           </div>
-          <button type="button" className="delete-task">
+          <button type="button" className="delete-task" onClick={handleDeleteTask}>
             <img src={crossIcon} alt="Delete task" />
           </button>
         </li>
