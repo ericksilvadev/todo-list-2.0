@@ -51,7 +51,9 @@ const TaskList = () => {
 
   return (
     <DragDropContext onDragEnd={(result) => onDragEnd(result)}>
-      {showWarning && <span className="drag-warning">You cannot drag a task while using a filter.</span>}
+      {showWarning && (
+        <span className="drag-warning">You cannot reorder tasks while using a filter.</span>
+      )}
       <div className="filter-tasks">
         <p className="tasks-left">{tasks.filter((task) => !task.completed).length} items left</p>
         <div className="filter-buttons">
@@ -91,6 +93,7 @@ const TaskList = () => {
           </ul>
         )}
       </Droppable>
+      <p className="drag-info">Drag and drop to reorder list.</p>
     </DragDropContext>
   );
 };
