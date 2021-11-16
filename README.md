@@ -2,6 +2,8 @@
 
 In this project, I created a dynamic todo list witch items can be added, deleted and moved. The tasks are saved in the localStorage and can be seen in the same way on a new visit to the page.
 
+Access the project demo [here](https://todo-list-mauve-alpha.vercel.app/).
+
 _This project was developed based on [Frontend Mentor's challenge](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)_
 
 ![project-demo](src/images/todo-list.png)
